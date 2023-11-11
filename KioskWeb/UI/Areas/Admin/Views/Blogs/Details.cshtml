@@ -1,0 +1,51 @@
+﻿@model Blog
+
+@{
+    ViewData["Title"] = "Detay";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a asp-action="Index">Bloglar</a></li>
+    <li class="breadcrumb-item active">Detay</li>
+</ol>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Details">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label">Blog Adı</label>
+                <input asp-for="Title" class="form-control" readonly/>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="BlogDescription" class="control-label">Blog Kısa Açıklaması </label>
+                <textarea asp-for="BlogDescription" class="form-control" readonly></textarea>
+                <span asp-validation-for="BlogDescription" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <textarea asp-for="Content" id="editor" readonly></textarea>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Date" class="control-label">Tarih</label>
+                <input asp-for="Date" type="date" class="form-control" readonly/>
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section js{
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+    </script>
+}

@@ -1,0 +1,39 @@
+﻿@using Entities.Models
+
+@model IEnumerable<CustomerMessage>
+
+@{
+    ViewData["Title"] = "Müşteri Mesajları";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a asp-action="Index">Müşteri Mesajları</a></li>
+    <li class="breadcrumb-item active">Müşteri Mesajları Listesi</li>
+</ol>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Müşteri İsim Soyisim</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CustomerMessage customerMessage in Model)
+        {
+        <tr>
+            <td>@customerMessage.FirstName @customerMessage.LastName</td>
+            <td>
+
+
+                <a title="Detay" class="btn btn-sm btn-outline-info" asp-action="Details" asp-route-id="@customerMessage.Id">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a title="Sil" class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@customerMessage.Id">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Blog>
+
+@{
+    ViewData["Title"] = "Blog Listesi";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a asp-action="Index">Bloglar</a></li>
+    <li class="breadcrumb-item active">Blog Listesi</li>
+</ol>
+
+<p>
+    <a class="btn btn-outline-dark" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Blog Adı
+            </th>
+
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                <td>
+                    <a title="Resim Ekle" class="btn btn-sm btn-outline-dark" asp-action="Upload" asp-controller="BlogImages" asp-route-id="@item.Id">
+                        <i class="fas fa-image"></i>
+                    </a>
+
+                    <a title="Resim Listesi" class="btn btn-sm btn-outline-success" asp-action="index" asp-controller="BlogImages" asp-route-id="@item.Id">
+                        <i class="fas fa-image"></i>
+                    </a>
+                    
+                    <a title="Düzenle" class="btn btn-sm btn-outline-warning" asp-action="Edit" asp-route-id="@item.Id">
+                        <i class="fas fa-pencil-alt"></i>
+                    </a>
+
+                    <a title="Detay" class="btn btn-sm btn-outline-info" asp-action="Details" asp-route-id="@item.Id">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    
+                    <a title="Sil" class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

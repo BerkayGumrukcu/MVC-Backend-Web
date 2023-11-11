@@ -1,0 +1,17 @@
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.AssemblyInfo.cs
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Root.deps.json
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Root.dll
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Root.pdb
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Entities.dll
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Services.dll
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Entities.pdb
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\bin\Debug\net6.0\Services.pdb
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.csproj.CopyComplete
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.dll
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\refint\Root.dll
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\Root.pdb
+C:\Users\user\Desktop\KioskWeb\KioskWeb\Root\obj\Debug\net6.0\ref\Root.dll

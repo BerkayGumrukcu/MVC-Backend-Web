@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Resim Yükleme Ekranı";
+}
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/admin/Projects/index">Projeler</a></li>
+    <li class="breadcrumb-item active">Resim Yükleme Ekranı</li>
+</ol>
+
+
+<form action="/admin/ProjectImages/upload" class="dropzone" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="@Model">
+    <div class="fallback">
+        <input name="file" type="file" multiple />
+    </div>
+</form>

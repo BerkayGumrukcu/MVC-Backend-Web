@@ -1,0 +1,17 @@
+﻿using Entities.Core;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Entities.Models
+{
+    public class ProjectImage : CoreEntity
+    {
+        public string ImageUrl { get; set; }
+        public bool IsActive { get; set; }
+        public int ProjectId { get; set; }
+        public virtual Project Project { get; set; }
+    }
+}

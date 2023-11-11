@@ -1,0 +1,80 @@
+﻿<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item"><a href="/admin/Blogs/index">Bloglar</a></li>
+    <li class="breadcrumb-item active">Resim Listesi</li>
+</ol>
+
+<div class="row row-col-4 mt-5" id="card"></div>
+
+@section js{
+    <script>
+        $(document).ready(function(){
+            (function(){
+                $.getJSON("/admin/Blogimages/_index/@Model",
+                    function (data) {
+                        $.each(data, function (key, value) {
+                            var cls = ""
+
+                            if (value.isActive) {
+                                cls = "success"
+                            }
+                            else {
+                                cls = "warning"
+                            }
+
+                            $("#card").append(
+                                `<div id="${value.id}" class="col-3 mb-3 border rounded p-2 shadow-sm">
+                                  <div class="card shadow-sm">
+                                  <img src="${value.imageUrl}" alt="Ask-Bilisim" class="img-thumbnail mb-2" />
+
+                               <div class="btn-group d-flex">
+
+                <a data-id="${value.id}" class="delete  btn btn-dark btn-sm">
+                <i class="fa fa-trash text-danger"></i></a>
+
+                <a data-id="${value.id}" class="main  btn btn-dark btn-sm">
+                <i class="fa fa-cogs text-${cls}"></i></a>
+                                      </div>
+                                    </div>
+                                 </div>`);
+                        })
+                    })
+            })();
+            $(document).on("click",".main",function(){
+                var button = $(this);
+                var id = $(button).data("id");
+                $.ajax({
+                    url: "/admin/Blogimages/_active/" + id,
+                    dataType:"json",
+                    type:"post",
+                    success:function(result){
+if(result.code == 200){
+    $("#card svg")
+    .removeClass("text-success")
+    .addClass("text-warning");
+    $(button).children()
+    .removeClass("text-warning")
+    .addClass("text-success");
+}
+                    },
+                    error:function(error){
+                    }
+                })
+            })
+$(document).on("click",".delete",function(){
+    var id = $(this).data("id");
+    var buton = $(this);
+    $.ajax({
+                    url: "/admin/Blogimages/_delete/" + id,
+        dataType:"json",
+        type :"post",
+        success:function(result){
+            if(result== 200){
+                $(buton).closest(".col-3").hide("slow")
+            }
+        },
+        error: function(){}
+    })
+})
+        })
+    </script>
+}

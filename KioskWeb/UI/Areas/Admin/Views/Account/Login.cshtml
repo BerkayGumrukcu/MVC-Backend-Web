@@ -1,0 +1,80 @@
+﻿@using UI.Areas.Admin.Models
+
+@{
+    Layout = null;
+}
+
+@model LoginVM
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Giriş Yap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+
+    <link href="~/a.css/floating-labels.css" rel="stylesheet">
+</head>
+
+<body>
+    <form class="form-signin" method="post" asp-action="Login">
+        <input type="hidden" value="@ViewBag.ReturnUrl" name="ReturnUrl" />
+        <div asp-validation-summary="All">
+
+        </div>
+
+
+        <div class="text-center mb-4">
+
+
+            <h1 class="h3 mb-3 font-weight-normal">ADMİN PANEL</h1>
+
+
+
+        </div>
+
+        <div class="form-label-group">
+            <input type="email" id="Email" asp-for="Email" class="form-control" placeholder="Email address" required autofocus autocomplete="off">
+            <label for="Email">Mail Adresi</label>
+        </div>
+
+        <div class="form-label-group">
+            <input type="password" id="Password" asp-for="Password" class="form-control" placeholder="Password" required>
+            <label for="Password">Şifre</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            @*<label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>*@
+
+            <label class="ml-5">
+                <input type="checkbox" value="remember-me" onchange="myFunction()"> Şifreyi Göster
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Giriş Yap</button>
+
+    </form>
+
+    <script>
+
+        function myFunction() {
+            var x = document.getElementById("Password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
+</body>
+</html>
